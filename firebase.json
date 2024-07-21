@@ -1,0 +1,21 @@
+{
+  "functions": {
+    "source": ".output/server",
+    "runtime": "nodejs20"
+  },
+  "hosting": {
+    "site": "spover-slva",
+    "public": ".output/public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "rewrites": [
+      {
+        "source": "**",
+        "function": {
+          "functionId": "server",
+          "region": "europe-west1"
+        }
+      }
+    ]
+  }
+}
